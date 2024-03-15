@@ -1,0 +1,15 @@
+{
+  "name": "job_lists",
+  "version": "1.0.0",
+  "description": "used for viewing the jobs available",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jayasoorya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "lodash": "^4.17.21"
+  }
+}
