@@ -86,7 +86,7 @@ const JobView = () => {
   };
 
   return (
-    <div style={{ minHeight: "100vh", color: "white" }}>
+    <div style={{ color: "white" }}>
       <div className="container">
         <div className="row mt-2">
           <div className="col-md-4">

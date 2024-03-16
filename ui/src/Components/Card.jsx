@@ -59,9 +59,13 @@ const Card = ({ data }) => {
             <p className="card-text">{data.companyName}</p>
           </div>
         </div>
-        <div className="col-3">
+        <div
+          className="col-3"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           <div className="skills">
             <p>Skills match</p>
+            <h6>78 %</h6>
           </div>
         </div>
       </div>
