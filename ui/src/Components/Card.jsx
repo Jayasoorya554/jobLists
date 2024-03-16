@@ -28,13 +28,13 @@ const Card = ({ data }) => {
         <div className="col-2">
           <img
             src={
-              data.companyName == "Apple Incorporations"
+              data.companyName === "Apple Incorporations"
                 ? "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg"
-                : data.companyName == "Amazon"
+                : data.companyName === "Amazon"
                 ? "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png"
-                : data.companyName == "BMW"
+                : data.companyName === "BMW"
                 ? "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png"
-                : data.companyName == "Incresco"
+                : data.companyName === "Incresco"
                 ? "https://media.licdn.com/dms/image/C4D0BAQFPUkfxDey_mg/company-logo_200_200/0/1652773034406/incresco_technology_logo?e=2147483647&v=beta&t=77iUGqOs7dP6gPurHc3P5hR6SIFj_P2MIVqOCacI3Sg"
                 : ""
             }
@@ -46,33 +46,24 @@ const Card = ({ data }) => {
           <div>
             <h5 className="card-title">{data.jobName}</h5>
             <p className="card-text">
-              {data.location == "Bengaluru"
+              {data.location === "Bengaluru"
                 ? `${data.location}, Karnataka, India`
-                : data.location == "Chennai"
+                : data.location === "Chennai"
                 ? `${data.location}, Tamilnadu, India`
-                : data.location == "Coimbatore"
+                : data.location === "Coimbatore"
                 ? `${data.location}, Tamilnadu, India`
-                : data.location == "Mumbai"
+                : data.location === "Mumbai"
                 ? `${data.location}, Maharashtra, India`
                 : data.location}
             </p>
             <p className="card-text">{data.companyName}</p>
           </div>
         </div>
-        {/* <div className="col-3">
+        <div className="col-3">
           <div className="skills">
             <p>Skills match</p>
           </div>
-          <div>
-            <img
-              src={
-                "https://apexcharts.com/wp-content/uploads/2018/05/semi-circle-chart.svg"
-              }
-              alt=""
-              style={{ width: "50%", height: "50%", borderRadius: "18.91px" }}
-            />
-          </div>
-        </div> */}
+        </div>
       </div>
       <div className="card-footer row" style={{ color: "white" }}>
         <div className=" col-6">
