@@ -45,11 +45,7 @@ const JobView = () => {
     const fetchData = async () => {
       try {
         const queryString = Object.keys(selectedFilters)
-          .map((key) => {
-            if (JSON.stringify(selectedFilters[key]) != []) {
-              return `${key}=${JSON.stringify(selectedFilters[key])}`;
-            }
-          })
+          .map((key) => `${key}=${JSON.stringify(selectedFilters[key])}`)
           .join("&");
         const response = await fetch(
           `https://joblists.onrender.com/job?${queryString}`
