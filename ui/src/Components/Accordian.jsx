@@ -13,13 +13,7 @@ const YourComponent = () => {
   };
   const datePosted = {
     name: "Date Posted",
-    value: [
-      "Last 24 hours",
-      "Last 48 hours",
-      "Last 7 days",
-      "Last 14 days",
-      "Last month",
-    ],
+    value: ["24hours", "48hours", "7days", "14days", "lastmonth"],
   };
   const salary = {
     name: "Salary Range (in Lakh+)",
@@ -95,6 +89,7 @@ const YourComponent = () => {
 
   const handleClearFilters = () => {
     setSelectedFilters({});
+    setSelectedCount(0);
     setClearAllFilters(!clearAllFilters);
   };
 
@@ -106,8 +101,11 @@ const YourComponent = () => {
           <div className="col-md-4">
             <div className="row">
               <p className="col-3">Filters</p>
+              <p className="col-4 d-flex justify-content-end">
+                {selectedCount} filters applied
+              </p>
               <p
-                className="col-9 d-flex justify-content-end"
+                className="col-4 d-flex justify-content-end"
                 onClick={handleClearFilters}
                 style={{ cursor: "pointer" }}
               >

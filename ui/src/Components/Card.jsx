@@ -16,7 +16,7 @@ const Card = ({ data }) => {
 
   const calculateDateDifference = (date) => {
     const currentDate = new Date();
-    const [day, month, year] = date.split("/");
+    const [year, month, day] = date.split("/");
     const postedDate = new Date(`${year}-${month}-${day}`);
     const differenceInTime = currentDate.getTime() - postedDate.getTime();
     const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
@@ -40,7 +40,7 @@ const Card = ({ data }) => {
                 : ""
             }
             alt={data.companyName}
-            style={{ width: "80px", height: "80px", borderRadius: "18.91px" }}
+            style={{ width: "100%", height: "100%", borderRadius: "18.91px" }}
           />
         </div>
         {/* Data */}

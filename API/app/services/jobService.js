@@ -11,16 +11,6 @@ const getJob = async (req, res) => {
     Object.keys(req.query).map((key) => {
       return (queryData[key] = JSON.parse(req.query[key]));
     });
-    // let queryData = {
-    //   companyName: ["Divavu", "Toyato", "BlogXS"],
-    //   location: ["Bondoboghila"],
-    //   // salary: ["1000-10000", "200000"],
-    //   jobName: ["Teacher", "Research Associate"],
-    //   // education: ["PhD"],
-    //   // experience: ["0-2", "8"],
-    //   // postedOn: ["7days", "lastmonth"],
-    // };
-    console.log(queryData);
 
     jobsData = jobsData?.filter((val) =>
       queryData?.companyName
