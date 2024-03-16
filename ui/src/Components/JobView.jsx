@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import Dropdown from "./DD/Dropdown";
 
-const YourComponent = () => {
+const JobView = () => {
   const location = {
     name: "Location",
     value: ["Bengaluru", "Chennai", "Coimbatore", "Mumbai"],
@@ -36,7 +36,6 @@ const YourComponent = () => {
     name: "Experience (Years)",
     value: ["0-2", "3-5", "6-8", "9-11"],
   };
-  // Sample data for cards
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedFilters, setSelectedFilters] = useState({});
@@ -45,7 +44,6 @@ const YourComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Construct the URL with selected filters
         const queryString = Object.keys(selectedFilters)
           .map((key) => {
             if (JSON.stringify(selectedFilters[key]) != []) {
@@ -54,7 +52,7 @@ const YourComponent = () => {
           })
           .join("&");
         const response = await fetch(
-          `http://localhost:3000/job?${queryString}`
+          `https://joblists.onrender.com/job?${queryString}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -76,8 +74,6 @@ const YourComponent = () => {
       ...selectedFilters,
       [filterName]: selectedValues,
     };
-
-    // Remove the filter key if its value is empty
     if (selectedValues.length === 0) {
       delete newSelectedFilters[filterName];
     }
@@ -97,7 +93,6 @@ const YourComponent = () => {
     <div style={{ minHeight: "100vh", color: "white" }}>
       <div className="container">
         <div className="row mt-2">
-          {/* Left side with filters */}
           <div className="col-md-4">
             <div className="row">
               <p className="col-3">Filters</p>
@@ -164,7 +159,6 @@ const YourComponent = () => {
             />
           </div>
 
-          {/* Right side with cards */}
           <div className="col-md-8">
             <h2>{data.length} Jobs Available</h2>
             <div className="row">
@@ -187,4 +181,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default JobView;

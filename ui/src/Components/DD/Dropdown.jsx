@@ -9,19 +9,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 export default function Dropdown(props) {
-  const [expanded, setExpanded] = useState(false);
   const [selectedValues, setSelectedValues] = useState([]);
 
   useEffect(() => {
-    // Reset selectedValues when the reset prop changes
     if (props.reset) {
       setSelectedValues([]);
     }
   }, [props.reset]);
-
-  const handleExpansion = () => {
-    setExpanded((prevExpanded) => !prevExpanded);
-  };
 
   const handleCheckboxChange = (value) => {
     const newSelectedValues = selectedValues.includes(value)
@@ -34,6 +28,7 @@ export default function Dropdown(props) {
   return (
     <>
       <Accordion
+        defaultExpanded
         className="row"
         style={{ backgroundColor: "#171c28", color: "white" }}
       >

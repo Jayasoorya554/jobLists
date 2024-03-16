@@ -25,7 +25,6 @@ const Card = ({ data }) => {
   return (
     <div className="card mt-1">
       <div className="card-body row">
-        {/* Image */}
         <div className="col-2">
           <img
             src={
@@ -43,7 +42,6 @@ const Card = ({ data }) => {
             style={{ width: "100%", height: "100%", borderRadius: "18.91px" }}
           />
         </div>
-        {/* Data */}
         <div className="col-7">
           <div>
             <h5 className="card-title">{data.jobName}</h5>
@@ -61,11 +59,20 @@ const Card = ({ data }) => {
             <p className="card-text">{data.companyName}</p>
           </div>
         </div>
-        <div className="col-3">
+        {/* <div className="col-3">
           <div className="skills">
             <p>Skills match</p>
           </div>
-        </div>
+          <div>
+            <img
+              src={
+                "https://apexcharts.com/wp-content/uploads/2018/05/semi-circle-chart.svg"
+              }
+              alt=""
+              style={{ width: "50%", height: "50%", borderRadius: "18.91px" }}
+            />
+          </div>
+        </div> */}
       </div>
       <div className="card-footer row" style={{ color: "white" }}>
         <div className=" col-6">
